@@ -1,0 +1,28 @@
+How to Conceptualize Python Fundamentals for Greater Mastery - Part 3
+
+View Examples of Concept Definitions
+You might find a couple of examples helpful in understanding how to define difficult concepts. Suppose you’re studying variables. Here are possible responses to the key questions:
+
+- What: A variable is a name that points to an object stored in the program’s memory.
+- Why: Variables are key for data processing.
+- How: Assigning a value to a variable using the assignment operator (=) allows you to access your program’s data in a user-friendly way. You can then access and change the value by name throughout the program as needed.
+
+This description provides a concise summary of what a variable is, why it matters, and how to use one. You can also include an example of variable usage as an addendum to your definition:
+
+>>> age = 25
+
+Here, you created a variable called age and assigned it a value of 25. From now on, you can use the variable name age to access, modify, or use the variable’s value.
+
+Or, you might be learning about lists. Your definitions could look like this:
+
+- What: A list is a sequence of values or objects.
+- Why: Working with sequences of items is a common, foundational task in programming. Python lists make this important work easier.
+- How: You can create a list by writing a pair of square brackets, with a comma-separated sequence of items inside them. Assign the list to a variable to use it throughout your program.
+
+Here’s a short Python list that demonstrates the points in the definitions above:
+
+>>> foods = ["cake", "sushi", "pizza"]
+
+In this example, you created a list called foods. The list contains comma-separated names of three foods inside square brackets.
+
+As you can see, breaking down concepts into a few key points can help make them much easier to understand.
