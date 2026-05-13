@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 
 from .summarizer import summarize
+from .output.save import save_summary
 
 def main():
     if len(sys.argv) < 2:
@@ -23,6 +24,11 @@ def main():
     print("\n" + "="*40)
     print(result)
     print("="*40 + "\n")
+
+    # ✅ Save summary
+    output_path = save_summary(file_path, result)
+
+    print(f"Saved summary to: {output_path}")
 
 if __name__ == "__main__":
     main()

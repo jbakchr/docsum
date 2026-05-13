@@ -1,0 +1,7 @@
+How to Conceptualize Python Fundamentals for Greater Mastery - Part 1
+
+Struggling to conceptualize Python fundamentals is a common problem learners face. If you’re unable to put a fundamental concept into perspective and form a clear mental picture of what it’s about, it’ll be difficult to understand and apply it.
+
+In this guide, you’ll walk through a framework of steps to help you better conceptualize Python fundamentals. This process is helpful for Python developers and learners at any experience level, but especially for beginners. If you are just starting out, this guide will help you build a solid understanding of the basics.
+
+You might want to set aside twenty minutes or so to read through the tutorial, and another thirty minutes to practice on a few key concepts. You should also gather a list of difficult topics, your preferred learning resources, and a note-taking app or pen and paper.
