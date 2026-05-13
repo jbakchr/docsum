@@ -1,0 +1,20 @@
+How to Conceptualize Python Fundamentals for Greater Mastery - Part 2
+
+Step 1: Define the Concept in Your Own Words
+Begin by briefly describing the concept in your own words. You can write your definition in the downloadable worksheet provided with this tutorial. Note that writing is a powerful tool for reinforcing learning, as educator and former Rutgers University professor Janet Emig asserted in her paper, Writing as a Mode of Learning.
+
+Answer Key Questions for Defining a Concept
+As a framework for your definition, consider these key questions:
+
+- What: What is a short description of the concept?
+- Why: Why is the concept important in the broader Python context?
+- How: How is the concept used in a Python program?
+
+These questions will help you establish a core understanding of the concept you’re learning.
+
+You might feel intimidated when you’re trying to define a Python concept. If you need help, there are many resources that can assist you. Real Python’s Reference section has concise definitions of Python keywords, built-in types, standard library modules, and more to help you build your own descriptions.
+
+If you’re a visual learner, using an illustration can be a powerful way to enhance your understanding. In addition to a written definition, you can draw a picture or diagram to illustrate the concept. For example, the Variables in Python: Usage and Best Practices tutorial shows some example images of how you might picture variables. If you look at the Lists vs Tuples in Python tutorial, you can see a diagram of a Python list.
+
+While pictures can be helpful, being able to conceptualize doesn’t necessarily mean you have to think visually. There are different thinking styles. Some researchers suggest that people can be visual or verbal thinkers. Pattern-based thinking is another style. Several of the tips in this tutorial encourage you to explore different aspects of these styles, depending on which works best for you.
+
