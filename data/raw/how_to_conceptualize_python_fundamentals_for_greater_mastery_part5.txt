@@ -1,0 +1,18 @@
+How to Conceptualize Python Fundamentals for Greater Mastery - Part 5
+
+Relate Concepts to Familiar Software
+You can also view the software you use as potential sources for examples. Even if you’re not exactly sure how certain features are implemented in other software, you can still think about how you might use Python concepts to recreate them.
+
+Here are some ways that variables might show up in software:
+
+- You can use variables in a game to store player data, such as the player’s name, login password, and current level.
+- A computer file might have several variables, including the filename, format, size, and location on the computer.
+
+Since variables are a fundamental concept not only in Python but also in nearly every other programming language, you’ll see that these examples are just a few ways variables appear in software.
+
+Here are some software examples of lists:
+
+- An email app shows a list of email messages.
+- Online game stores like Steam use multiple lists for information such as games for purchase, games in your library, your friends, and achievements.
+
+Again, you’ll likely find many more examples of lists in software beyond the ones introduced here.
