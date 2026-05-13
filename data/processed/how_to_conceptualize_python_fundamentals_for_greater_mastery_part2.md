@@ -1,6 +1,6 @@
 # how_to_conceptualize_python_fundamentals_for_greater_mastery_part2
 
-## Part 2 - Define the Concept in Your Own Words - Section 1
+## Step 1 - Define the Concept in Your Own Words - Section 1
 
 Here's a summary of the technical text:
 
