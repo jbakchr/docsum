@@ -89,6 +89,108 @@ Each summary follows a consistent structure:
 
 ---
 
+## 📚 Real Example Walkthrough
+
+This example shows how `docsum` is used in practice to summarize a real Python article.
+
+### 📰 Source Article
+
+“How to Conceptualize Python Fundamentals for Greater Mastery”  
+(from Real Python)
+
+---
+
+### Step 1 – Split the Article
+
+The article is manually divided into smaller sections (to avoid LLM input limits):
+
+```
+data/raw/
+    how_to_conceptualize_python_fundamentals_part1.txt
+    how_to_conceptualize_python_fundamentals_part2.txt
+    ...
+    how_to_conceptualize_python_fundamentals_part9.txt
+```
+
+Each file contains a natural section of the article (intro, step 1, step 2, etc.).
+
+---
+
+### Step 2 – Summarize Each Section
+
+Run:
+
+```bash
+python -m docsum.cli summarize data/raw/how_to_conceptualize_python_fundamentals_part1.txt
+```
+
+Repeat for all parts.
+
+This produces:
+
+```
+data/processed/
+  how_to_conceptualize_python_fundamentals_part1.md
+  ...
+  how_to_conceptualize_python_fundamentals_part9.md
+```
+
+---
+
+### Step 3 – Combine Summaries
+
+Run:
+
+```bash
+python -m docsum.cli combine "data/processed/how_to_*_part*.md"
+```
+
+This generates a final combined summary:
+
+```
+data/processed/
+    how_to_conceptualize_python_fundamentals_summary.md
+```
+
+---
+
+### ✅ Final Combined Summary (Example)
+
+```
+TL;DR:
+Master Python fundamentals by defining concepts in your own words, connecting them to real-world patterns, and applying understanding through practice.
+
+Key points:
+- Define Python concepts using "What", "Why", and "How"
+- Connect concepts to real-world and software analogies
+- Apply understanding through practice, comparison, and teaching
+
+Actionable insights:
+- Start with one concept and apply the 3-step framework
+- Write definitions and use diagrams
+- Reinforce knowledge by teaching or coding examples
+```
+
+---
+
+### 🧠 What This Demonstrates
+
+- High-quality summaries come from small, focused inputs
+- Combining summaries produces a clear overall understanding
+- The workflow scales to long articles without complexity
+
+---
+
+### 💡 Takeaway
+
+Instead of trying to summarize long documents in one step:
+
+👉 Break → Summarize → Combine
+
+This produces better results and builds a reusable knowledge base.
+
+---
+
 ## 🧠 Design Philosophy
 
 This project intentionally:
