@@ -1,0 +1,45 @@
+How to Conceptualize Python Fundamentals for Greater Mastery - Part 7
+
+Compare With Similar Concepts
+Where applicable, you can also try comparing and contrasting a concept with similar concepts and approaches. Often, you’ll have to get deeper into your studies before you see comparable concepts.
+
+For example, if you’ve studied lists, you understand they’re one approach to storing sequences of values. Later, you’ll likely learn about tuples, another data structure. Lists and tuples are similar in that they’re both ordered sequences, but lists are mutable, while tuples are immutable.
+
+The following code compares a list to a tuple:
+
+>>> fruit_tuple = ("apricot", "banana", "cherry")
+>>> fruit_list = ["apricot", "banana", "cherry"]
+>>> fruit_tuple[0]
+'apricot'
+>>> fruit_list[0]
+'apricot'
+>>> fruit_list[0] = "apple"
+>>> fruit_list
+['apple', 'banana', 'cherry']
+>>> fruit_tuple[0] = "apple"
+Traceback (most recent call last):
+     ...
+TypeError: 'tuple' object does not support item assignment
+>>> fruit_tuple
+('apricot', 'banana', 'cherry')
+>>> fruit_list.append("date")
+>>> fruit_list
+['apple', 'banana', 'cherry', 'date']
+>>> fruit_tuple.append("date")
+Traceback (most recent call last):
+     ...
+AttributeError: 'tuple' object has no attribute 'append'
+
+In this example, you see both a tuple and a list, each storing the names of three fruits. They look similar, but a tuple uses parentheses, while a list is enclosed in square brackets. Also, once you’ve created the tuple, you can’t modify its contents later in the program.
+
+You can use indexing to access values in both lists and tuples, as shown in the code example where you access and print the first element in each. However, the fruit tuple can’t be modified. You successfully append the fruit date to the end of the fruit list, but you get an error when attempting to do the same with the tuple.
+
+Similarly, you can use indexing to change the first element of the fruit list to an apple, but when you try the same with the tuple, you receive an error message indicating that Python doesn’t support that operation.
+
+As for variables, constants are a similar concept. Like variables, constants also associate a name with a value, but a constant’s value can’t be changed once assigned. Constants are denoted with a different name and convention, as you can see in the example below:
+
+>>> MAX_SPEED = 300
+
+You created a constant called MAX_SPEED and assigned it a value of 300. Once you’ve created it, the value can’t be changed later in the program.
+
+This method of comparing and contrasting similar concepts relates to concept mapping. Understanding and visually illustrating the connections between related ideas helps you retain information better and see the concepts more clearly. This deeper insight also helps you choose the most appropriate tools for any specific situation or task.
