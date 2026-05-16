@@ -1,38 +1,35 @@
-import requests
+# docsum/summarizer.py
 
-from .prompts import build_prompt
-from .chunking import chunk_text
+import requests
+from .prompts import build_prompt, build_combine_prompt
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "llama3"  # change if you want
+MODEL = "llama3"  # change if needed, e.g. "llama3:8b" or "mistral"
 
-def summarize(text: str):
-    prompt = build_prompt(text)
-
+def _ollama_generate(prompt: str) -> str:
     response = requests.post(
         OLLAMA_URL,
         json={
             "model": MODEL,
             "prompt": prompt,
-            "stream": False
-        }
+            "stream": False,
+            # These options keep outputs bounded and help avoid "takes forever"
+            "options": {
+                "temperature": 0.2,
+                "num_predict": 450,   # cap output tokens-ish
+            }
+        },
+        timeout=600,  # hard stop (seconds) so it can't hang forever
     )
-
     response.raise_for_status()
-    data = response.json()
-
-    return data["response"]
+    return response.json()["response"]
 
 
-def summarize_long(text: str):
-    chunks = chunk_text(text)
+def summarize(text: str) -> str:
+    prompt = build_prompt(text)
+    return _ollama_generate(prompt)
 
-    summaries = []
 
-    for chunk in chunks:
-        summaries.append(summarize(chunk))
-
-    combined = "\n\n".join(summaries)
-
-    # Final "summary of summaries"
-    return summarize(combined)
+def summarize_combined(section_summaries_md: str) -> str:
+    prompt = build_combine_prompt(section_summaries_md)
+    return _ollama_generate(prompt)

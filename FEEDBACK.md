@@ -1,56 +1,139 @@
-# Feedback
+# FEEDBACK.md
 
-This document is thought of as a place for me (Jonas) to write down thoughts about my usage of this projects.
+## Purpose
 
-## Copy-pasting parts of article takes way too long
+This document captures my thoughts, frustrations, and insights while developing and using the `docsum` project.
 
-As the header says it is taking way too long for me to follow the below mentioned process in order to get smaller summaries of an entire article about Python:
+---
 
-1. Copy-paste section under 3000 characters
-2. Run app to get md summary of section
-3. Repeat
+## ⚠️ Friction & Challenges
 
-For an article of about 27000 words I have to approximately repeat this process 9 times (27000 words in total / maximum of 3000 words per section).
+### 1. Manual Copy-Pasting is Slow
 
-## Final summary based on multiple smaller summaries
+Currently, the workflow for summarizing an article is:
 
-Can an AI model even produce a good enough final overall summary of multiple small summaries so that I'll be able to use this final summary for anything later on.
+- Copy-paste a section under 3000 characters
+- Run the CLI
+- Repeat
 
-I don't know as I haven't tried it yet.
+For long articles (~27,000 characters), this results in ~9 repetitions.
 
-But this is a critical point in order to make this project/solution useful at all!
+#### 🧠 Insights
 
-## Bigger model
+- This feels too slow and manual-heavy
 
-If the multiple smaller summaries produced by the AI does enable it to finally generate one overall summary for all smaller summaries - meaning one summary that would make sense to store based on all the smaller summaries - then one might need a bigger model to produce ONE summary of an entire Python article so that the coherence of wanting to summaries an article and save that for use in ones "second brain".
+#### 🔧 Ideas / Improvements
 
-## Having to read Python article before summarizing it
+In some way code something that would take an entire article (one longer than 3000 characters) and some way help me "dissect" the article into smaller logical chunks with each chunk being less than 3000 characters in order to create good "sub"-summaries of an entire article
 
-Although it would obviously be cool to just take an article about some Python related topic, chunk it (manually for now), create multiple smaller summaries (that could later on be summarized into ONE final summary - i.e. ONE summary based on multiple summaries) I feel that the one thing is sort of "missing" from me wanting to do something like that.
+In a way this could just be some sort tool (incorporated in the "docsum" cli or not) that would take the entire text of the article and then provide me with details like the following which would make me know better how to create these chunks myself:
 
-Because if I DON'T read an article first myself then how am I to know if either multiple small summaries or ONE final summary of these smaller summaries is actually worth saving.
+Let's assume this/such a tool could give me some overview like:
 
-And this feels CRUCIAL! And up to me (of course) ..
+- Total text from H1: 30000 characters
+- Total text within H2 sections of H1 section: 
+  - 2 sections of 15000 characters each
+- Total text within H3 sections with each H2 sections:
+  - 8 sections of 1875 characters each
 
-Because trying to gain knowledge from something that I haven't even tried to read myself before creating either multiple summaries and/or one final summary might not end up giving me any real insight about a topic since .. I haven't done myself to try and understand an article about some Python related topic.
+By knowing that each H3 section would be around 1875 each I would then know that each of these sections would be good for the current model summarize and that I would than have to create 16 separate sections of one entire article which would probably be good to both make separate summaries of and later ONE good final summary out these 16 smaller summaries.
 
-Hence, the (real) sort of process for might have to be like this:
+---
 
-1. Read Python article
-2. If I feel "Hey, this is actually really good! I should summarize and save this for later .."
-3. Then summarize the article (in either smaller or one final summary)
+### 2. Can Multiple Summaries Become One Good Summary?
 
-Because THIS - I feel - would be the correct way of creating a knowledge base for my later "second brain" (about Python things for now).
+A key question:
 
-## Multiple small summaries actually makes sense
+> Can multiple small summaries be combined into one useful final summary?
 
-Now that I've finished extracting the "How to Conceptualize Python Fundamentals for Greater Mastery" Python article from https://realpython.com/conceptualize-python-fundamentals/ I actually feel that the 9 generated summaries actually makes sense and are useful when reading them one by one (this even though I haven't actually read the entire article from start to finish yet - which I obviously should do in order to get a real and better sense for whether the 9 summaries actually makes sense and are useful for me).
+This is critical:
 
-But despite not even having read the entire article before generating all summaries I actually get quite a lot out of just reading the summaries one by one. Because just from these I get this out of them:
+- If YES → the system becomes useful
+- If NO → the workflow may not scale
 
-- 1) To learn Python concepts you should take your time to read about a topic
-- 2) Take notes in the process
-- 3) Visualize the concept in some way as this might help your understanding of the topic (if you learn better from using that too)
-- 4) Write down questions for yourself such "What", "How", "Why" in order to better learn about a topic
+#### 🧠 Insights
 
-And this in itself feels very powerful even if I - as in this case - actually haven't read the entire article!
+- Creating ONE good summary out of multiple summaries works surprisingly well!
+
+---
+
+### 3. Model Size & Quality
+
+Concern:
+
+- A small model (like llama3) might struggle with:
+  - combining summaries
+  - maintaining coherence
+
+👉 A larger model might be needed for final summarization.
+
+#### 🧠 Insights
+
+- This how NOT been tested yet and for now using a smaller model still works good enough for making ONE summary out of multiple summaries.
+
+---
+
+## 🤔 Reflections on Learning Process
+
+### 4. Should I Read Before Summarizing?
+
+Important realization:
+
+> If I don’t read the article myself first, how do I know the summaries are actually valuable?
+
+This feels crucial.
+
+---
+
+### ✅ Revised Mental Model
+
+A better process might be:
+
+1. Read article
+2. Decide: “Is this worth keeping?”
+3. Then summarize (sections + final)
+
+👉 This ensures quality in the knowledge base.
+
+---
+
+## ✅ What’s Working Well
+
+### 5. Section-Based Summaries Work Surprisingly Well
+
+Even without reading the full article:
+
+- The 9 summaries are useful individually
+- I can extract meaningful insights just from them
+
+Examples:
+
+- Take time to learn concepts
+- Take notes
+- Use visualization
+- Ask “What / Why / How”
+
+👉 This already provides value.
+
+---
+
+### 6. Combined Summary Feels Very Strong
+
+The `combine` feature:
+
+✅ Produces a clear, concise final summary  
+✅ Captures the main idea well  
+✅ Feels useful for learning and recall
+
+👉 This is a big success.
+
+---
+
+## 🧠 Current Conclusion
+
+- Section-based summaries ✅ useful
+- Combined summary ✅ valuable
+- Workflow ⚠️ still manual
+- Reading-first approach ✅ likely important
+
+👉 The project is already useful, but can be improved further.
