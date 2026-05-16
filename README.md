@@ -1,51 +1,130 @@
 # docsum 🧠
 
-A simple AI-powered tool for summarizing documents and building a personal knowledge base.
+A simple AI-powered CLI tool for summarizing documents and building a personal knowledge base.
+
+---
 
 ## ✨ Motivation
 
-Reading long documents (articles, tutorials, PDFs) takes time and effort.
+Reading long technical articles takes time and effort.
 
 This project explores how to:
 
-- Automatically summarize documents using LLMs
-- Extract useful insights from text
-- (Eventually) build a personal "second brain"
+- Summarize content quickly using local LLMs
+- Extract useful insights from long-form text
+- Build a personal “second brain” for learning
 
 ---
 
-## 🚀 Features (initial)
+## 🚀 Current Features
 
-- 📄 Load text files or PDFs
-- ✂️ Split content into chunks
-- 🤖 Generate summaries using an LLM
-- 📋 Output structured summaries
+- 📄 Summarize text files (section-by-section)
+- 🤖 Generate structured summaries using a local LLM (Ollama)
+- 💾 Automatically save summaries as Markdown
+- 🔗 Combine multiple summaries into one final, concise summary
 
 ---
 
-## 🧱 Architecture
+## 🧱 Current Workflow (Actual Architecture)
+
+This reflects how the tool is _actually used today_:
 
 ```
 
-Input → Parsing → Chunking → LLM → Summary
+Article
+↓
+Manual sectioning (copy/paste)
+↓
+docsum summarize (per section)
+↓
+Saved summaries (.md)
+↓
+docsum combine
+↓
+Final combined summary
 
 ```
 
-Planned extensions:
-
-- Storage of summaries
-- Search and retrieval
-- Multi-document summarization
-- Knowledge base ("second brain")
+👉 This approach avoids LLM limitations with long inputs and produces higher quality summaries.
 
 ---
 
-## 🛠️ Tech stack
+## 🧠 How It's Used
+
+Example workflow:
+
+1. Copy an article into smaller sections
+2. Save as:
+
+   ```
+   data/raw/article\_part1.txt
+   data/raw/article\_part2.txt
+   ```
+
+3. Summarize each part:
+
+   ```bash
+   python -m docsum.cli summarize data/raw/article_part1.txt
+   ```
+
+4. Combine all summaries:
+   ```bash
+   python -m docsum.cli combine "data/processed/article_part*.md"
+   ```
+
+---
+
+## 🧪 Example Output
+
+Each summary follows a consistent structure:
+
+    TL;DR:
+    ...
+
+    Key points:
+    - ...
+
+    Actionable insights:
+    - ...
+
+---
+
+## 🧠 Design Philosophy
+
+This project intentionally:
+
+- ✅ avoids large inputs (LLM limitation)
+- ✅ favors small, high-quality summaries
+- ✅ builds knowledge incrementally
+- ✅ focuses on real usefulness over complexity
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ Done
+
+- CLI summarizer
+- Section-based workflow
+- Save summaries to disk
+- Combine summaries into final output
+
+### ⏳ Next
+
+- Better CLI UX (list, search)
+- PDF / web content ingestion
+- Automatic chunking (optional)
+- Lightweight search over summaries
+- Personal "second brain" features
+
+---
+
+## 🛠️ Tech Stack
 
 - Python
-- FastAPI (future)
-- Local LLM (Ollama) or API (OpenAI)
-- LangChain / custom pipeline
+- Local LLM via Ollama
+- Requests (HTTP)
+- Markdown for storage
 
 ---
 
@@ -65,36 +144,17 @@ pip install -r requirements.txt
 
 ## ⚙️ Usage
 
+### Summarize one file
+
 ```bash
 python -m docsum.cli summarize data/raw/example.txt
 ```
 
----
+### Combine summaries
 
-## 🧪 Example output
-
-    TL;DR:
-    This article explains how FastAPI handles async requests.
-
-    Key points:
-    - FastAPI uses async/await
-    - Built on Starlette
-    - Very fast performance
-
-    Actionable insights:
-    - Use async for I/O-bound tasks
-    - Prefer FastAPI for APIs
-
----
-
-## 🗺️ Roadmap
-
-- [ ] CLI summarizer (MVP)
-- [ ] PDF support
-- [ ] Better prompts / output structure
-- [ ] Save summaries to disk
-- [ ] Search summaries
-- [ ] Build "second brain"
+```bash
+python -m docsum.cli combine "data/processed/*.md"
+```
 
 ---
 
