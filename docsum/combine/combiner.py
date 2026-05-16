@@ -3,7 +3,7 @@
 from pathlib import Path
 import glob
 
-from .summarizer import summarize_combined
+from ..summarization.summarizer import summarize_combined
 
 def combine_summaries(glob_pattern: str) -> tuple[str, list[Path]]:
     paths = [Path(p) for p in glob.glob(glob_pattern)]

@@ -4,8 +4,8 @@ import sys
 from pathlib import Path
 import argparse
 
-from .summarizer import summarize
-from .combiner import combine_summaries
+from .summarization.summarizer import summarize
+from .combine.combiner import combine_summaries
 from .output.save import save_summary, save_text
 
 DEFAULT_LIMIT = 3000
