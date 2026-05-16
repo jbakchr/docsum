@@ -1,0 +1,27 @@
+How to Conceptualize Python Fundamentals for Greater Mastery - Part 6
+
+Step 3: Apply Your Understanding to Conceptualize Python Fundamentals
+Now that you’ve connected the Python concepts to real-world analogies, you can use what you’ve learned to strengthen your understanding. There are various ways you can put the concepts into practice, such as writing small programs, comparing related concepts, and teaching what you’ve learned to others.
+
+Practice With Coding Problems and Programs
+You should try working on practice problems and small programs that implement the concept you’re learning. If possible, try creating sample programs that relate to the examples you found for the concept.
+
+Start with small programs so you can handle the concepts in manageable parts. Once you’re comfortable, begin integrating the concept into larger programs as well, so you can see how it fits with other ideas.
+
+For variables, start by writing small programs that do the following:
+
+- Create a variable with any name you choose
+- Assign a value to the variable
+- Print the value of the variable
+- Change the variable’s value
+- Print the new value
+
+To practice working with lists, try the following:
+
+- Create a list with a few items
+- Print the list and all its values
+- Access and print the first and last items of the list
+- Add an item to the end of the list
+- Print the list again
+
+If you can do these operations, you’ve demonstrated an understanding of some key Python list operations and applications. You can also try another exercise to practice creating and working with a shopping list in Python.
