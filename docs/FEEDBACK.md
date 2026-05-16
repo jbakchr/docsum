@@ -1,139 +1,179 @@
 # FEEDBACK.md
 
-## Purpose
-
-This document captures my thoughts, frustrations, and insights while developing and using the `docsum` project.
+## 🧾 Template (copy for new entries)
 
 ---
 
-## ⚠️ Friction & Challenges
+### 📅 Date
 
-### 1. Manual Copy-Pasting is Slow
+YYYY-MM-DD
 
-Currently, the workflow for summarizing an article is:
+### 🎯 Context
 
-- Copy-paste a section under 3000 characters
-- Run the CLI
-- Repeat
+What did I do today?
+(e.g. summarized article, tested combine feature, tried new prompt)
 
-For long articles (~27,000 characters), this results in ~9 repetitions.
+### ⚠️ Friction / Annoyances
 
-#### 🧠 Insights
+What felt slow, frustrating, or unclear?
 
-- This feels too slow and manual-heavy
+- ...
+- ...
 
-#### 🔧 Ideas / Improvements
+### 🤔 Questions / Uncertainty
 
-In some way code something that would take an entire article (one longer than 3000 characters) and some way help me "dissect" the article into smaller logical chunks with each chunk being less than 3000 characters in order to create good "sub"-summaries of an entire article
+What am I unsure about?
 
-In a way this could just be some sort tool (incorporated in the "docsum" cli or not) that would take the entire text of the article and then provide me with details like the following which would make me know better how to create these chunks myself:
+- Can X actually work?
+- Is Y worth doing?
 
-Let's assume this/such a tool could give me some overview like:
+### ✅ What Worked Well
 
-- Total text from H1: 30000 characters
-- Total text within H2 sections of H1 section: 
-  - 2 sections of 15000 characters each
-- Total text within H3 sections with each H2 sections:
-  - 8 sections of 1875 characters each
+What felt surprisingly good?
 
-By knowing that each H3 section would be around 1875 each I would then know that each of these sections would be good for the current model summarize and that I would than have to create 16 separate sections of one entire article which would probably be good to both make separate summaries of and later ONE good final summary out these 16 smaller summaries.
+- ...
+- ...
 
----
+### 🧠 Insights
 
-### 2. Can Multiple Summaries Become One Good Summary?
+What did I learn (about system OR learning)?
 
-A key question:
+- ...
+- ...
 
-> Can multiple small summaries be combined into one useful final summary?
+### 🔧 Ideas / Improvements
 
-This is critical:
+Possible next steps (optional)
 
-- If YES → the system becomes useful
-- If NO → the workflow may not scale
+- automate X
+- improve Y
+- test Z
 
-#### 🧠 Insights
+### ✅ Decision (optional but powerful)
 
-- Creating ONE good summary out of multiple summaries works surprisingly well!
+What do I actually believe now?
 
----
-
-### 3. Model Size & Quality
-
-Concern:
-
-- A small model (like llama3) might struggle with:
-  - combining summaries
-  - maintaining coherence
-
-👉 A larger model might be needed for final summarization.
-
-#### 🧠 Insights
-
-- This how NOT been tested yet and for now using a smaller model still works good enough for making ONE summary out of multiple summaries.
+- I will:
+- I want to try:
 
 ---
 
-## 🤔 Reflections on Learning Process
-
-### 4. Should I Read Before Summarizing?
-
-Important realization:
-
-> If I don’t read the article myself first, how do I know the summaries are actually valuable?
-
-This feels crucial.
+# 🧠 Entries
 
 ---
 
-### ✅ Revised Mental Model
+## 📅 2026-05-12
 
-A better process might be:
+### 🎯 Context
+
+Worked on summarizing a full Python article using:
+
+- manual sectioning
+- per-section summaries
+- combined summary feature
+
+---
+
+### ⚠️ Friction / Annoyances
+
+- Manual copy-pasting of article sections takes too long
+- Workflow becomes repetitive:
+  - copy section
+  - run CLI
+  - repeat ~9 times for one article
+
+👉 This feels inefficient for longer articles
+
+---
+
+### 🤔 Questions / Uncertainty
+
+- Can multiple small summaries be reliably combined into ONE good summary?
+- Is a small model like llama3 sufficient for combining summaries?
+- Would a larger model produce significantly better final summaries?
+
+---
+
+### ✅ What Worked Well
+
+- Section-based summaries turned out to be very useful individually
+- Summaries were:
+  - readable
+  - actionable
+  - easy to understand
+
+- The **combine feature worked surprisingly well**
+  - produced a clean, concise final summary
+  - captured the main idea of the article
+
+---
+
+### 🧠 Insights
+
+- Smaller inputs → better summaries
+- Section-by-section summarization works better than summarizing full articles
+- Even without reading the full article, summaries alone can provide meaningful insights
+
+From summaries alone I learned:
+
+- Take time to understand concepts
+- Take notes while learning
+- Use visualization when helpful
+- Ask "What / Why / How" questions
+
+👉 This feels powerful — even without reading the full article
+
+---
+
+### 🔧 Ideas / Improvements
+
+- Automate the chunking process (reduce manual effort)
+- Improve CLI workflow (reduce repetition)
+- Possibly experiment with larger models for final summary
+- Improve file naming and organization of summaries
+
+---
+
+### ✅ Decision
+
+- I believe:
+  - Section-based summaries are useful ✅
+  - Combined summaries are valuable ✅
+
+- I will:
+  - Continue using section-based workflow
+  - keep summaries as part of a knowledge base
+
+- I want to try:
+  - reading articles BEFORE summarizing them
+  - to ensure higher quality knowledge capture
+
+---
+
+## 🧠 Meta Reflection
+
+### Key realization:
+
+> "Reading before summarizing is important"
+
+Even if summaries are useful on their own:
+
+- Without reading:
+  - I cannot judge quality fully
+  - I may store low-value knowledge
+
+---
+
+### Updated mental model:
 
 1. Read article
-2. Decide: “Is this worth keeping?”
-3. Then summarize (sections + final)
-
-👉 This ensures quality in the knowledge base.
+2. Evaluate: "Is this worth saving?"
+3. If yes → summarize (sections + combine)
 
 ---
 
-## ✅ What’s Working Well
+## 📊 Patterns (emerging over time)
 
-### 5. Section-Based Summaries Work Surprisingly Well
-
-Even without reading the full article:
-
-- The 9 summaries are useful individually
-- I can extract meaningful insights just from them
-
-Examples:
-
-- Take time to learn concepts
-- Take notes
-- Use visualization
-- Ask “What / Why / How”
-
-👉 This already provides value.
-
----
-
-### 6. Combined Summary Feels Very Strong
-
-The `combine` feature:
-
-✅ Produces a clear, concise final summary  
-✅ Captures the main idea well  
-✅ Feels useful for learning and recall
-
-👉 This is a big success.
-
----
-
-## 🧠 Current Conclusion
-
-- Section-based summaries ✅ useful
-- Combined summary ✅ valuable
-- Workflow ⚠️ still manual
-- Reading-first approach ✅ likely important
-
-👉 The project is already useful, but can be improved further.
+- Manual workflow → biggest friction
+- Smaller inputs → better output
+- Combine step → high value
