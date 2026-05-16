@@ -2,9 +2,8 @@
 
 ## Part 1 - Introduction
 
-Here is a clear and concise summary of the technical text:
-
 ### TL;DR:
+
 This guide helps Python learners and developers conceptualize fundamental concepts by providing a framework for understanding and applying them. It's especially helpful for beginners who need to build a solid foundation in Python basics.
 
 #### Key points:

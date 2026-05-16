@@ -2,8 +2,6 @@
 
 ## Step 1 - Define the Concept in Your Own Words - Section 1
 
-Here's a summary of the technical text:
-
 ### TL;DR:
 
 To master Python fundamentals, start by defining key concepts in your own words using questions like "What", "Why", and "How". This helps establish a core understanding of the concept.
