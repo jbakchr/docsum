@@ -22,6 +22,8 @@ def cmd_summarize(args):
     text = file_path.read_text(encoding="utf-8", errors="ignore")
     print(f"Text length: {len(text)}")
 
+    sys.exit(1)
+
     if args.limit is not None:
         text = text[:args.limit]
 

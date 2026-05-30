@@ -1,0 +1,8 @@
+How to Integrate Local LLMs With Ollama and Python
+
+To work through this tutorial, you’ll need the following resources and setup:
+
+- Ollama installed and running: You’ll need Ollama to use local LLMs. You’ll get to install it and set it up in the next section.
+- Python 3.8 or higher: You’ll be using Ollama’s Python software development kit (SDK), which requires Python 3.8 or higher. If you haven’t already, install Python on your system to fulfill this requirement.
+- Models to use: You’ll use llama3.2:latest and codellama:latest in this tutorial. You’ll download them in the next section.
+- Capable hardware: You need relatively powerful hardware to run Ollama’s models locally, as they may require considerable resources, including memory, disk space, and CPU power. You may not need a GPU for this tutorial, but local models will run much faster if you have one.

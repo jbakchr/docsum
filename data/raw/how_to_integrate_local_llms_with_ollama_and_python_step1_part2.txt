@@ -1,0 +1,28 @@
+How to Integrate Local LLMs With Ollama and Python
+
+Pull the Required Models
+Once Ollama is installed and running, you can pull the required models. You must have sufficient free disk space to complete the process. For example, the llama3.2:latest model requires 2.0 GB of space, and the codellama:latest model needs 3.8 GB.
+
+To pull the models, run the following commands:
+
+$ ollama pull llama3.2:latest
+$ ollama pull codellama:latest
+
+These commands will take some time to complete because they download the models to your local drive.
+
+Now that you’ve downloaded the models, you can try them out from the command line:
+
+$ ollama run llama3.2:latest
+>>> Explain what Python is in one sentence.
+Python is a high-level, interpreted programming language known for its
+simplicity, readability, and versatility, often used for web development,
+data analysis, machine learning, automation, and more.
+
+If you ran this prompt successfully, then you’re ready to connect from Python. You can press Ctrl+D to exit the chat.
+
+Install Ollama’s Python SDK
+Ollama provides a Python library that enables you to use local models within your Python applications and projects. You can install the library from PyPI into a virtual environment with the following command:
+
+(venv) $ python -m pip install ollama
+
+This library is also known as the Ollama Python SDK (Software Development Kit) and provides the recommended way to integrate Python projects with Ollama.

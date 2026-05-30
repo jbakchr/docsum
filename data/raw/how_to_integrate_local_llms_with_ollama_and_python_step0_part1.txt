@@ -1,0 +1,5 @@
+How to Integrate Local LLMs With Ollama and Python
+
+Integrating local large language models (LLMs) into your Python projects using Ollama is a great strategy for improving privacy, reducing costs, and building offline-capable AI-powered apps.
+
+Ollama is an open-source platform that makes it straightforward to run modern LLMs locally on your machine. Once you’ve set up Ollama and pulled the models you want to use, you can connect to them from Python using the ollama library.

@@ -1,0 +1,25 @@
+How to Integrate Local LLMs With Ollama and Python
+
+Step 1: Set Up Ollama, Models, and the Python SDK
+Before you can talk to a local model from Python, you need Ollama running and at least one model downloaded.
+
+Get Ollama Running
+To get started, navigate to Ollama’s download page and grab the installer for your current operating system. You’ll find installers for Windows 10 or newer and macOS 14 Sonoma or newer. Run the appropriate installer and follow the on-screen instructions. For Linux users, the installation process differs slightly, as you’ll learn soon.
+
+On Windows, Ollama will run in the background after installation, and the CLI will be available for you. If this doesn’t happen automatically for you, then go to the Start menu, search for Ollama, and run the app.
+
+On macOS, the app manages the CLI and setup details, so you just need to launch Ollama.app.
+
+If you’re on Linux, install Ollama with the following command:
+
+$ curl -fsSL https://ollama.com/install.sh | sh
+
+Once the process is complete, you can verify the installation by running:
+
+$ ollama -v
+
+If this command works, then the installation was successful. Next, start Ollama’s service by running the command below:
+
+$ ollama serve
+
+That’s it! You’re now ready to start using Ollama on your local machine. In some Linux distributions, such as Ubuntu, this final command may not be necessary, as Ollama may start automatically when the installation is complete. In that case, running the command above will result in an error.
